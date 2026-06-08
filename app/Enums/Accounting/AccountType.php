@@ -16,6 +16,8 @@ enum AccountType: string implements HasLabel
     case ContraEquity = 'contra_equity';
     case OperatingRevenue = 'operating_revenue';
     case NonOperatingRevenue = 'non_operating_revenue';
+    case PlatformCommissionRevenue = 'platform_commission_revenue';
+    case SubscriptionRevenue = 'subscription_revenue';
     case ContraRevenue = 'contra_revenue';
     case UncategorizedRevenue = 'uncategorized_revenue';
     case OperatingExpense = 'operating_expense';
@@ -36,6 +38,8 @@ enum AccountType: string implements HasLabel
             self::ContraEquity => 'Contra Equity',
             self::OperatingRevenue => 'Operating Revenue',
             self::NonOperatingRevenue => 'Non-Operating Revenue',
+            self::PlatformCommissionRevenue => 'Platform Commission Revenue',
+            self::SubscriptionRevenue => 'Subscription Revenue',
             self::ContraRevenue => 'Contra Revenue',
             self::UncategorizedRevenue => 'Uncategorized Revenue',
             self::OperatingExpense => 'Operating Expense',
@@ -58,6 +62,8 @@ enum AccountType: string implements HasLabel
             self::ContraEquity => 'Contra Equity',
             self::OperatingRevenue => 'Operating Revenue',
             self::NonOperatingRevenue => 'Non-Operating Revenue',
+            self::PlatformCommissionRevenue => 'Platform Commission Revenue',
+            self::SubscriptionRevenue => 'Subscription Revenue',
             self::ContraRevenue => 'Contra Revenue',
             self::UncategorizedRevenue => 'Uncategorized Revenue',
             self::OperatingExpense => 'Operating Expenses',
@@ -73,7 +79,7 @@ enum AccountType: string implements HasLabel
             self::CurrentAsset, self::NonCurrentAsset, self::ContraAsset => AccountCategory::Asset,
             self::CurrentLiability, self::NonCurrentLiability, self::ContraLiability => AccountCategory::Liability,
             self::Equity, self::ContraEquity => AccountCategory::Equity,
-            self::OperatingRevenue, self::NonOperatingRevenue, self::ContraRevenue, self::UncategorizedRevenue => AccountCategory::Revenue,
+            self::OperatingRevenue, self::NonOperatingRevenue, self::PlatformCommissionRevenue, self::SubscriptionRevenue, self::ContraRevenue, self::UncategorizedRevenue => AccountCategory::Revenue,
             self::OperatingExpense, self::NonOperatingExpense, self::ContraExpense, self::UncategorizedExpense => AccountCategory::Expense,
         };
     }

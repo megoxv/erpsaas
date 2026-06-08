@@ -116,8 +116,7 @@ class TransactionResource extends Resource
                     ->label('Type')
                     ->options(TransactionType::class),
                 Tables\Filters\TernaryFilter::make('is_payment')
-                    ->label('Payment')
-                    ->default(false),
+                    ->label('Payment'),
                 Tables\Filters\SelectFilter::make('payee')
                     ->label('Payee')
                     ->options(static fn () => Transaction::getPayeeOptions())

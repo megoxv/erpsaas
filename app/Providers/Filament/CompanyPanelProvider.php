@@ -80,18 +80,13 @@ class CompanyPanelProvider extends PanelProvider
      */
     public function panel(Panel $panel): Panel
     {
-        $isDemoEnvironment = is_demo_environment();
-
         return $panel
             ->default()
             ->id('company')
             ->path('company')
             ->login(Login::class)
-            ->when(! $isDemoEnvironment, function (Panel $panel) {
-                return $panel
-                    ->registration(Register::class)
-                    ->passwordReset();
-            })
+            // ->registration(Register::class)
+            // ->passwordReset()
             ->tenantMenu(false)
             ->plugins([
                 FilamentCompanies::make()
@@ -109,12 +104,7 @@ class CompanyPanelProvider extends PanelProvider
                     ->autoAcceptInvitations()
                     ->termsAndPrivacyPolicy()
                     ->notifications()
-                    ->modals()
-                    ->socialite(
-                        condition: ! $isDemoEnvironment,
-                        providers: [Provider::Github],
-                        features: [Feature::RememberSession, Feature::ProviderAvatars],
-                    ),
+                    ->modals(),
                 PanelShiftDropdown::make()
                     ->logoutItem()
                     ->companySettings()

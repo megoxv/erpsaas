@@ -39,6 +39,8 @@ class AccountCode
             AccountType::ContraEquity => [3900, 3999],
             AccountType::OperatingRevenue => [4000, 4499],
             AccountType::NonOperatingRevenue => [4500, 4899],
+            AccountType::PlatformCommissionRevenue => [4800, 4849],
+            AccountType::SubscriptionRevenue => [4850, 4889],
             AccountType::ContraRevenue => [4900, 4949],
             AccountType::UncategorizedRevenue => [4950, 4999],
             AccountType::OperatingExpense => [5000, 5499],
